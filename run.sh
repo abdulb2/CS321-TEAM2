@@ -6,6 +6,8 @@ then
 fi
 echo 'venv exists!'
 
+sleep 1
+
 source venv/bin/activate
 
 pip3 install -r requirements.txt
