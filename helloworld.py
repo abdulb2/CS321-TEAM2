@@ -20,7 +20,7 @@ app.secret_key = secrets.token_hex(64)
 
 @app.route('/')
 def hello_world():
-    return render_template('hello_world.html')
+    return render_template('hello_world.html', name = 'Ashwin')
 
 
 @app.route('/calendar', methods=['get', 'post'])
