@@ -1,4 +1,10 @@
 
+if [! -e '$venv']
+then
+    virtualenv -p `which python3` venv
+    echo 'venv file is created'
+fi
+echo 'venv exists!'
 
 source venv/bin/activate
 
