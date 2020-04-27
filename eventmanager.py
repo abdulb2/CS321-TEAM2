@@ -11,6 +11,9 @@ class Entry:
             'end': end
         }
 
+    def get_event(self):
+        return self.event
+
 
 class EntryList:
     """List of all entries from a single pdf"""
