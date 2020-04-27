@@ -38,6 +38,10 @@ class EntryList:
                 removed = True
                 break
         return removed
+    
+    
+    def get_list(self):
+        return self.this_list
 
 
 def main():
@@ -68,5 +72,5 @@ def test(main_list):
         print(x.event['summary'])
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#    main()
