@@ -14,7 +14,3 @@ for assignment in assignments:
 
 for entry in entry_list.this_list:
     print(entry.event)
-
-
-
-
