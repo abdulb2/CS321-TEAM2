@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <h2>Add Event</h2>
+</head>
+<body>
+<form action="{{ url_for('add_entry') }}" method="POST">
+    <p>
+        {{ form.summary.label() }} <br>
+        {{ form.summary() }}
+    </p>
+    <p>
+        {{ form.start_date.label() }} <br>
+        <input name="start_date" id="start_date" type="date">
+    </p>
+    <p>
+        {{ form.due_date.label() }} <br>
+        <input name="due_date" id="due_date" type="date">
+    </p>
+    <p>
+        {{ form.submit.label() }} <br>
+        {{ form.submit() }}
+    </p>
+</form>
+<form action="{{ url_for('editor') }}" method="POST" target="self">
+    <button type="submit" value="Return">Return</button>
+</form>
+</body>
+</html>

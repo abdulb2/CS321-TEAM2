@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editor</title>
+</head>
+<body>
+{% for entry in entry_list%}
+    <p>
+    {{ entry }}
+    </p>
+(% else %)
+    did not iterate
+(% end for %)
+</body>
+</html>
