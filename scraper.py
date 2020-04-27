@@ -9,14 +9,19 @@ class Scraper:
         self.page = html_page
 
     def scrape(self):
-        retVal = [[]]
+        event_list = []
         soup = BeautifulSoup(open(self.page), "lxml")
         #print(soup.prettify())
         #print(soup)
-        links = soup.find_all("tr")
-        singleEvent = []
-        for row in links:
-            print("row:")
-            for item in row:
-                print(item)
-                #print(type(item))
+        table = soup.find_all("tr")
+        for table_row in table:
+            #print(row)
+            #print(type(row))
+            #print()
+            single_event = []
+            for item in table_row:
+                if item.name == "td":
+                    single_event.append(item.string)
+            if len(single_event) != 0:
+                event_list.append(single_event)
+        return event_list
