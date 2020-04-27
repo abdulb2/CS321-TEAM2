@@ -1,4 +1,4 @@
-import requests
+from eventmanager import Entry, EntryList
 from bs4 import  BeautifulSoup
 
 class Scraper:
@@ -9,14 +9,17 @@ class Scraper:
         self.page = html_page
 
     def scrape(self):
-        event_list = []
+        entry_list = EntryList()
         soup = BeautifulSoup(open(self.page), "lxml")
         table = soup.find_all("tr")
         for table_row in table:
             single_event = []
+            new_entry = None
             for item in table_row:
                 if item.name == "td":
                     single_event.append(str(item.string))
             if len(single_event) != 0:
-                event_list.append(single_event)
-        return event_list
+                summary, start, end = single_event
+                new_entry = Entry(summary, start, end)
+                entry_list.add_entry(new_entry)
+        return entry_list
