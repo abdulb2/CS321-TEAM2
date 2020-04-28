@@ -23,7 +23,7 @@ def add_entry():
     end_date = request.form('due_date')
     start = datetime.datetime(start_date)
     end = datetime.datetime(end_date)
-    entry = entrymanager.Entry(summary, start, end)
+    entry = eventmanager.Entry(summary, start, end)
     entry_list.add_entry(entry)
     return render_template('add_entry.html')
 
