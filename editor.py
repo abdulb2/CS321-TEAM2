@@ -16,7 +16,7 @@ def main():
     return render_template('editor.html', entry_list)
 
 
-@app.route('editor/add_entry', methods=['GET', 'POST'])
+@app.route('/editor/add_entry', methods=['GET', 'POST'])
 def add_entry():
     summary = request.form('summary')
     start_date = request.form('start_date')
