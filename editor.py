@@ -1,14 +1,14 @@
 import datetime
-import entrymanager
+import eventmanager
 
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-entry_list = entrymanager.EntryList()
+entry_list = eventmanager.EntryList()
 
 
-# editor is the interface between the entrymanager and the user
+# editor is the interface between the eventmanager and the user
 
 
 @app.route('/editor', methods=['GET', 'POST'])
