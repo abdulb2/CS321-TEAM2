@@ -1,4 +1,4 @@
-@echo off
+@ECHO off
 IF NOT EXIST 'venv'(
 	virtualenv venv
 )
