@@ -13,7 +13,7 @@ entry_list = eventmanager.EntryList()
 
 @app.route('/editor', methods=['GET', 'POST'])
 def main():
-    return render_template('editor.html', entry_list)
+    return render_template('editor.html', entry_list.get_list())
 
 
 @app.route('/editor/add_entry', methods=['GET', 'POST'])
