@@ -28,12 +28,13 @@ def add_entry():
     return render_template('add_entry.html')
 
 
-def delete_entry():
-    render_template('delete_entry.html')
+def delete_entry(entry):
+    entry_list.remove_entry(entry)
 
 
-def edit_entry():
-    render_template('edit_entry.html')
+def edit_entry(entry):
+    delete_entry(entry)
+    add_entry()
 
 
 if __name__ == "__main__":
