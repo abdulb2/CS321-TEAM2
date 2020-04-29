@@ -15,6 +15,7 @@ class Entry:
         return self.event
 
 
+
 class EntryList:
     """List of all entries from a single pdf"""
 

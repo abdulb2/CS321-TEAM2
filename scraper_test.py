@@ -3,7 +3,6 @@ from scraper import Scraper
 
 scraper = Scraper()
 scraper.setPage("./course_table.html")
-assignments = scraper.scrape()
 
 entry_list = scraper.scrape()
 

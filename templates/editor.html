@@ -5,12 +5,32 @@
     <title>Editor</title>
 </head>
 <body>
-{% for entry in entry_list%}
-    <p>
-    {{ entry }}
-    </p>
-(% else %)
-    did not iterate
-(% end for %)
+<table>
+    <tr>
+        <th>Summary</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+    </tr>
+    {% for entry in entry_list%}
+        <tr>
+            <td>{{ entry['summary'] }}</td>
+            <td>{{ entry['start'] }}</td>
+            <td>{{ entry['end'] }}</td>
+            <td>
+                <form method="post">
+                    <input id="index" name="index" class="hidden" value="{{ loop.index - 1}}">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+     {% endfor %}
+</table>
+<a href="{{ url_for('add_entry') }}">
+    <button>Add Entry</button>
+</a>
+
+<a href="{{ url_for('insert_events') }}">
+    <button>Add to Calendar</button>
+</a>
 </body>
 </html>
