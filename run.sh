@@ -1,10 +1,9 @@
-
-if [! -e '$venv']
-then
-    virtualenv -p `which python3` venv
-    echo 'venv file is created'
+if [ ! -d "$venv" ]; then
+  python3 -m venv venv
+  echo 'venv file is created'
+else
+  echo "venv exists!"
 fi
-echo 'venv exists!'
 
 sleep 1
 
