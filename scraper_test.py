@@ -2,7 +2,7 @@ from eventmanager import EntryList, Entry
 from scraper import Scraper
 
 scraper = Scraper()
-scraper.setPage("./course_table.html")
+scraper.setPage("samples/course_table.html")
 
 entry_list = scraper.scrape()
 
